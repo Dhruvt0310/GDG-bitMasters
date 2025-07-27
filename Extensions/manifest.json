@@ -1,0 +1,23 @@
+{
+    "manifest_version": 3,
+    "name": "Social Media Time Tracker",
+    "version": "1.0",
+    "permissions": [
+      "tabs",
+      "storage",
+      "webNavigation"
+    ],
+    "content_scripts": [{
+      "matches": ["http://localhost:5173/*" ,  "*://*.youtube.com/*",
+      "*://*.instagram.com/*"], 
+      "js": ["content.js"]
+    }],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "host_permissions": [
+      "*://*.youtube.com/*",
+      "*://*.instagram.com/*",
+      "http://localhost:5173/*"
+    ]
+  }

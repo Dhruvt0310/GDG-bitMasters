@@ -1,0 +1,225 @@
+/* Friendly Chatbot Theme with Enhanced Input & Pop-In Animation */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600&display=swap');
+
+.chatappbody {
+  margin: 0;
+  padding: 0;
+  font-family: 'Quicksand', sans-serif;
+  background: linear-gradient(135deg, #a8deed, #fed6e3);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #222;
+  width: 100%;
+
+}
+
+.chatapp-container {
+  background: #fff;
+  border-radius: 15px;
+  width: 40%;
+
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+
+}
+
+.chatapp-h1 {
+  text-align: center;
+  color: #222;
+  margin-bottom: 20px;
+}
+
+/* Chat Window */
+.chat-window {
+  background: #fefefe;
+  border-radius: 15px;
+  padding: 20px;
+  max-height: 400px;
+  overflow-y: auto;
+  box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.05);
+  margin-bottom: 20px;
+}
+
+/* Chat Messages with Pop-In Animation */
+.chat-message {
+  margin-bottom: 15px;
+  padding: 12px 18px;
+  border-radius: 20px;
+  max-width: 75%;
+  font-size: 16px;
+  line-height: 1.5;
+  position: relative;
+  transition: background 0.3s;
+  color: #222;
+  animation: popIn 0.3s ease-out;
+}
+
+@keyframes popIn {
+  0% {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  80% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* User message styling */
+.chat-message.You {
+  background: #e1ffc7;
+  align-self: flex-end;
+  text-align: right;
+  margin-left: auto;
+  border-top-right-radius: 0;
+  color: #2e2e2e;
+}
+
+/* Therapist message styling */
+.chat-message.Therapist {
+  background: #f0f0f0;
+  align-self: flex-start;
+  text-align: left;
+  margin-right: auto;
+  border-top-left-radius: 0;
+  color: #2e2e2e;
+}
+
+/* Chat bubble pointers */
+.chat-message.Therapist::before {
+  content: '';
+  position: absolute;
+  top: 12px;
+  left: -10px;
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-right: 10px solid #f0f0f0;
+  border-bottom: 10px solid transparent;
+}
+.chat-message.You::after {
+  content: '';
+  position: absolute;
+  top: 12px;
+  right: -10px;
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-left: 10px solid #e1ffc7;
+  border-bottom: 10px solid transparent;
+}
+
+/* Loading Animation for Therapist Response */
+.loading-message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: #555;
+}
+.loading-message .dot {
+  width: 8px;
+  height: 8px;
+  margin: 0 3px;
+  background-color: #555;
+  border-radius: 50%;
+  animation: bounce 1s infinite;
+}
+.loading-message .dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.loading-message .dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes bounce {
+  0%, 60%, 100% {
+    transform: translateY(0);
+  }
+  30% {
+    transform: translateY(-8px);
+  }
+}
+
+/* Vibrant Chat Input Styles */
+/* Chat Input Styles with Vibrant Violet Theme */
+.chat-input {
+  display: flex;
+  gap: 10px;
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 12px 15px;
+  border-radius: 25px;
+  border: 2px solid #9b59b6; /* Vibrant violet border */
+  font-size: 16px;
+  font-weight: 500;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  outline: none;
+  color: #222;
+  background: linear-gradient(135deg, #af7ac5, #8e44ad); /* Violet gradient background */
+  box-shadow: 0 4px 6px rgba(155, 89, 182, 0.3);
+}
+
+.chat-input input::placeholder {
+  color: rgba(34, 34, 34, 0.7);
+  font-style: italic;
+}
+
+.chat-input input:focus {
+  border-color: #af7ac5; /* Lighter violet on focus */
+  box-shadow: 0 0 10px rgba(155, 89, 182, 0.4);
+}
+
+.chat-input button {
+  background: #8e44ad;
+  border: none;
+  border-radius: 25px;
+  padding: 12px 20px;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+  box-shadow: 0 4px 6px rgba(142, 68, 173, 0.3);
+}
+
+.chat-input button:hover {
+  background: #732d91;
+  transform: scale(1.05);
+}
+
+/* Lazy Loader Overlay */
+.loader-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+/* Spinner Animation for the Loader */
+.spinner {
+  width: 60px;
+  height: 60px;
+  border: 8px solid #f3f3f3;
+  border-top: 8px solid #8e44ad; /* Violet theme */
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

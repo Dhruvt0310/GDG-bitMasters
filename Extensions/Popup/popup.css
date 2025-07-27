@@ -1,0 +1,47 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 15px;
+    text-align: center;
+    background-color: #f9b572;
+    min-width: 300px;
+}
+
+h2 {
+    color: #d9534f;
+    margin-bottom: 20px;
+}
+
+.stats {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#time-spent {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.video-info {
+    text-align: left;
+    padding: 10px;
+    background-color: white;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+.video-info h3 {
+    color: #d9534f;
+    margin: 0 0 10px 0;
+    font-size: 16px;
+}
+
+.video-info p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #666;
+}
+  

@@ -1,0 +1,133 @@
+/* Navbar.css */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Roboto", sans-serif;
+  padding: 20px 20px;
+  padding-bottom: 16px;
+  background-color: #fff; /* Customize as needed */
+  color: #000;
+  position: relative; /* Fix the navbar at the top */
+  top: 0; /* Position it at the top of the viewport */
+  left: 0;
+  width: 100%; /* Make it span the full width */
+  z-index: 1000; /* Ensure it stays above other elements */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow for better visibility */
+}
+
+.logo img {
+  height: 40px;
+  margin-top: 0;
+  margin-left: 0;
+}
+
+.nav-links {
+  display: flex;
+  list-style-type: none;
+  margin-top: 0;
+  padding: 0;
+}
+
+.nav-elements {
+  display: flex;
+  margin-left: 280px;
+  align-items: center;
+  text-align: center;
+  font-weight: 500;
+}
+
+/* Left-to-right underline animation */
+.nav-link {
+  margin: auto 30px;
+  text-decoration: none;
+  color: #000;
+  font-size: 15px;
+  position: relative; /* Required for pseudo-element positioning */
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  width: 0; /* Start with no underline */
+  height: 2px; /* Thickness of the underline */
+  background-color: #000; /* Color of the underline */
+  left: 0;
+  bottom: -3px; /* Distance below the text */
+  transition: width 0.3s ease; /* Smooth underline animation */
+}
+
+.nav-link:hover::after {
+  width: 100%; /* Full width on hover */
+}
+
+.login-link {
+  text-decoration: none;
+  color: #000;
+  border: 2px solid #000;
+  padding: 10px 20px;
+  border-radius: 25px;
+  transition: ease 0.3s;
+}
+
+.login-link:hover {
+  background-color: #000;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Profile section adjustments */
+.navbar-profile-section {
+  position: relative;
+  display: inline-block;
+  /* height: 10px; */
+  /* margin-left: 200px; */
+  cursor: pointer;
+}
+
+.navbar-profile-image{
+  width:50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.profile-initial {
+  width: 50px; /* Same size as the image */
+  height: 50px; /* Same size as the image */
+  border-radius: 50%; 
+  background-color: #ccc; /* Customize background color */
+  color: #000; /* Text color */
+  font-size: 14px; /* Smaller font size */
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Centers the text inside the circle */
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%; /* Position below the profile icon */
+  right: 0;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.dropdown-menu ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dropdown-menu li {
+  padding: 10px 15px;
+  cursor: pointer;
+  text-align: left;
+}
+
+.dropdown-menu li:hover {
+  background-color: #f5f5f5;
+}

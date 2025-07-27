@@ -1,0 +1,396 @@
+.predictor-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .predictor-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 24px;
+  }
+  
+  /* Input Form Styling */
+  .input-form {
+    margin-bottom: 24px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 8px;
+  }
+  
+  .comparison-form {
+    border-left: 4px solid #007bff;
+  }
+  
+  .form-group {
+    margin-bottom: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .form-group label {
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 8px;
+  }
+  
+  .form-group input,
+  .form-group select {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+  }
+  
+  .form-group input:focus,
+  .form-group select:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0,123,255,0.1);
+  }
+  
+  /* Results Container */
+  .results-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-top: 32px;
+  }
+  
+  .prediction-results {
+    display: grid;
+    grid-gap: 24px;
+    margin-top: 24px;
+  }
+  
+  /* Cards Styling */
+  .result-card {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Risk Score Card */
+  .risk-score-card {
+    text-align: center;
+  }
+  
+  .probability-indicator {
+    padding: 16px;
+    border-radius: 8px;
+    color: white;
+    font-size: 1.2em;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  
+  /* Visualization Card */
+  .visualization-card {
+    padding: 20px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .visualization-container {
+    margin: 24px 0;
+    padding: 16px;
+    background: #f8f9fa;
+    border-radius: 12px;
+  }
+  
+  .visualization-container img {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+  }
+  
+  /* Risk Factors Grid */
+  .factors-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 16px;
+    margin-top: 16px;
+  }
+  
+  .factor-item {
+    background: #f8f9fa;
+    padding: 16px;
+    border-radius: 8px;
+    border-left: 4px solid #007bff;
+  }
+  
+  .factor-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+  
+  .risk-badge {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.8em;
+    font-weight: bold;
+  }
+  
+  .risk-badge.high { background: #ff4d4d; color: white; }
+  .risk-badge.moderate { background: #ffd700; }
+  .risk-badge.low { background: #4CAF50; color: white; }
+  
+  /* Recommendations Grid */
+  .recommendations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+    margin-top: 16px;
+  }
+  
+  .recommendation-item {
+    display: flex;
+    align-items: flex-start;
+    background: #f8f9fa;
+    padding: 16px;
+    border-radius: 8px;
+    border-left: 4px solid #28a745;
+  }
+  
+  .recommendation-number {
+    background: #28a745;
+    color: white;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 12px;
+    flex-shrink: 0;
+  }
+  
+  .recommendation-text {
+    flex: 1;
+  }
+  
+  /* Buttons */
+  .predict-button, .comparison-toggle {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 6px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .predict-button {
+    background: #007bff;
+    color: white;
+  }
+  
+  .predict-button:hover {
+    background: #0056b3;
+  }
+  
+  .comparison-toggle {
+    background: #6c757d;
+    color: white;
+  }
+  
+  .comparison-toggle:hover {
+    background: #5a6268;
+  }
+  
+  /* Loading State */
+  .predict-button:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+  }
+  
+  /* Add these styles to your existing CSS file */
+  
+  .comparison-section {
+    margin-top: 40px;
+    padding-top: 32px;
+    border-top: 2px solid #eee;
+  }
+  
+  .comparison-forms {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    margin-top: 16px;
+  }
+  
+  .comparison-buttons {
+    display: flex;
+    gap: 16px;
+    margin-top: 16px;
+  }
+  
+  .compare-button {
+    background: #28a745;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    flex: 1;
+  }
+  
+  .compare-button:hover {
+    background: #218838;
+  }
+  
+  .compare-button:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+  }
+  
+  .comparison-results-container {
+    margin-top: 32px;
+    padding: 24px;
+    background: #f8f9fa;
+    border-radius: 12px;
+  }
+  
+  .comparison-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    margin-top: 24px;
+  }
+  
+  .comparison-column {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .risk-score {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #007bff;
+    margin: 16px 0;
+  }
+  
+  .comparison-details {
+    margin-top: 16px;
+  }
+  
+  .comparison-detail-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .detail-label {
+    font-weight: 500;
+    color: #666;
+  }
+  
+  .comparison-analysis {
+    margin-top: 32px;
+  }
+  
+  .analysis-card {
+    background: white;
+    padding: 24px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .difference-metrics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+  
+  .difference-item {
+    padding: 12px;
+    background: #f8f9fa;
+    border-radius: 6px;
+    border-left: 4px solid #007bff;
+  }
+  
+  .difference-label {
+    font-weight: 500;
+    color: #333;
+    margin-right: 8px;
+  }
+  
+  .recommendations ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .recommendations li {
+    margin: 12px 0;
+    padding: 12px;
+    background: #f8f9fa;
+    border-radius: 6px;
+    border-left: 4px solid #28a745;
+  }
+  
+  /* Primary Analysis Section */
+  .primary-analysis {
+    margin-bottom: 40px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 32px;
+  }
+  
+  /* Risk Factors Card */
+  .risk-factors-card {
+    background: white;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  .risk-factors-card .factor-item {
+    margin-bottom: 16px;
+    padding: 16px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border-left: 4px solid #007bff;
+  }
+  
+  /* Empty State Handling */
+  .risk-factors-card:empty::after,
+  .recommendations-card:empty::after {
+    content: 'No risk factors to display for this scenario';
+    display: block;
+    text-align: center;
+    color: #666;
+    padding: 20px;
+    font-style: italic;
+  }
+  
+  .recommendations-card:empty::after {
+    content: 'No specific recommendations for this scenario';
+  }
+  
+  /* Comparison Section */
+  .comparison-section {
+    margin-top: 40px;
+    padding-top: 32px;
+    border-top: 2px solid #eee;
+  }
+  
+  .comparison-toggle {
+    margin: 24px 0;
+    width: auto;
+    padding: 12px 24px;
+  }

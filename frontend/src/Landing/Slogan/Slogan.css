@@ -1,0 +1,34 @@
+.slogan-container{
+    width: 100%;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+}
+
+.slogan-header{
+    margin: 10%;
+    margin-top: 10%;
+    margin-bottom: 2%;
+    font-size: 500%;
+    font-weight: 400;
+}
+
+.slogan-subtitle{
+    font-size: 120%;
+    color: #575757;
+    margin-bottom: 5%;
+}
+
+.slogan-button{
+    text-decoration: none;
+    color: #fff;
+    background-color:#256bd4;
+    padding: 15px 25px;
+    font-size: 110%;
+    border-radius: 25px;
+    font-weight: 700;
+}
+
+.section1-background{
+    background-image: url('https://www.naylor.com/associationadviser/wp-content/uploads/sites/2/2016/09/People-Texting-620-x-330.png');
+    
+}
